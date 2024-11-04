@@ -13,7 +13,8 @@ jobs:
       
       - name: Create config file
         run: |
-          echo "import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+          cat > admin/js/config.js << 'EOL'
+          import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
           import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
           import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
@@ -32,10 +33,11 @@ jobs:
 
           const app = initializeApp(firebaseConfig);
           export const auth = getAuth(app);
-          export const db = getFirestore(app);" > admin/js/config.js
+          export const db = getFirestore(app);
+          EOL
           
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . 
+          publish_dir: .
