@@ -1,4 +1,4 @@
-import { db } from '../admin/js/config.js';
+import { db } from '/SiteAthletix/admin/js/config.js';
 import { collection, getDocs, query, where, limit } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 async function loadProductsByCategory(category, containerId, maxItems = 4) {
@@ -35,7 +35,7 @@ function createProductCard(product) {
         <h3>${product.title}</h3>
         <p>${product.description}</p>
         <p class="price">${product.price}€</p>
-        <a href="/product-detail.html?id=${product.id}" class="cta-button">Voir le détail</a>
+        <a href="/SiteAthletix/product-detail.html?id=${product.id}" class="cta-button">Voir le détail</a>
     `;
     return div;
 }
