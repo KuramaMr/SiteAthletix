@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletix - Produits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Athletix" class="logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="categories.html?category=tshirts">T-shirts</a></li>
+            <li><a href="categories.html?category=chaussures">Chaussures</a></li>
+            <li><a href="categories.html?category=shorts">Shorts</a></li>
+            <li><a href="categories.html?category=chaussettes">Chaussettes</a></li>
+            <li><a href="categories.html?category=accessoires">Accessoires</a></li>
+        </ul>
+        <div class="cart-icon">🛒</div>
+        <button class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <main class="category-page">
+        <div class="category-header">
+            <h1 id="categoryTitle">Nos Produits</h1>
+            <div class="filters">
+                <select id="sortFilter">
+                    <option value="default">Trier par</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <!-- Les produits seront chargés ici dynamiquement -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- Votre footer existant -->
+    </footer>
+
+    <script type="module" src="js/products.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

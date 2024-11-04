@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Athletix Admin - Dashboard</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <div class="admin-nav">
+            <div class="admin-nav-left">
+                <a href="../index.html" class="home-btn">← Retour au site</a>
+                <h1>Administration Athletix</h1>
+            </div>
+            <button id="logoutBtn" class="cta-button">Déconnexion</button>
+        </div>
+
+        <form id="productForm" class="product-form">
+            <h2>Ajouter/Modifier un produit</h2>
+            <div class="form-group">
+                <label for="category">Catégorie</label>
+                <select id="category" required>
+                    <option value="tshirts">T-shirts</option>
+                    <option value="chaussures">Chaussures</option>
+                    <option value="shorts">Shorts</option>
+                    <option value="chaussettes">Chaussettes</option>
+                    <option value="accessoires">Accessoires</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Prix (€)</label>
+                <input type="number" id="price" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" id="image" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="displayIn">Afficher dans</label>
+                <select id="displayIn" multiple>
+                    <option value="slider1">Slider Promotions</option>
+                    <option value="slider2">Slider Nouveautés</option>
+                </select>
+                <small>Maintenez Ctrl (Cmd sur Mac) pour sélectionner plusieurs options</small>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="cta-button">Ajouter le produit</button>
+                <button type="button" id="cancelEditBtn" class="cta-button cancel-btn" style="display: none;">Annuler</button>
+            </div>
+        </form>
+
+        <div class="products-management">
+            <h2>Gestion des produits</h2>
+            <div id="productsList" class="products-list"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

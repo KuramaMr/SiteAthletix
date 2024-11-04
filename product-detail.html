@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du produit - Athletix</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="assets/logo.png" alt="Athletix Logo" onclick="window.location.href='../index.html'">
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="overlay"></div>
+            <ul class="nav-links">
+                <li><a href="categories/tshirts.html">T-shirts</a></li>
+                <li><a href="categories/chaussures.html">Chaussures</a></li>
+                <li><a href="categories/shorts.html">Shorts</a></li>
+                <li><a href="categories/chaussettes.html">Chaussettes</a></li>
+                <li><a href="categories/accessoires.html">Accessoires</a></li>
+            </ul>
+            <div class="cart-icon">🛒</div>
+        </nav>
+    </header>
+    <div id="navbar-placeholder"></div>
+
+    <main class="product-detail-container">
+        <div class="product-detail">
+            <div class="product-image">
+                <!-- L'image sera injectée ici -->
+            </div>
+            <div class="product-info">
+                <!-- Les informations produit seront injectées ici -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <ul>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">Nos magasins</a></li>
+                    <li><a href="#">Recrutement</a></li>
+                    <li><a href="#">Développement durable</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Service Client</h3>
+                <ul>
+                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#">Livraison & Retours</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Guide des tailles</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations Légales</h3>
+                <ul>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📱</a>
+                    <a href="#" title="Instagram">📸</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Athletix. Tous droits réservés. <a href="admin/admin-login.html" class="admin-link">Admin</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/product-detail.js"></script>
+</body>
+</html>

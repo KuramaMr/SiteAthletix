@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Athletix - Vêtements de Sport</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="assets/logo.png" alt="Athletix Logo" onclick="window.location.href='../index.html'">
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="overlay"></div>
+            <ul class="nav-links">
+                <li><a href="categories/tshirts.html">T-shirts</a></li>
+                <li><a href="categories/chaussures.html">Chaussures</a></li>
+                <li><a href="categories/shorts.html">Shorts</a></li>
+                <li><a href="categories/chaussettes.html">Chaussettes</a></li>
+                <li><a href="categories/accessoires.html">Accessoires</a></li>
+            </ul>
+            <div class="cart-icon">🛒</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="category-preview">
+            <div class="category-title">
+                <h2>T-shirts</h2>
+                <a href="categories/tshirts.html" class="view-all">Voir tout →</a>
+            </div>
+            <div class="products-grid" id="tshirts-products"></div>
+        </section>
+        <section class="promo-slider" id="slider1">
+            <div class="slider-content">
+            </div>
+            <div class="slider-navigation">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </section>
+        <section class="category-preview">
+            <div class="category-title">
+                <h2>Chaussures</h2>
+                <a href="categories/chaussures.html" class="view-all">Voir tout →</a>
+            </div>
+            <div class="products-grid" id="chaussures-products"></div>
+        </section>
+
+        <section class="category-preview">
+            <div class="category-title">
+                <h2>Shorts</h2>
+                <a href="categories/shorts.html" class="view-all">Voir tout →</a>
+            </div>
+            <div class="products-grid" id="shorts-products"></div>
+        </section>
+        <section class="promo-slider" id="slider2">
+            <div class="slider-content">
+            </div>
+            <div class="slider-navigation">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
+        </section>
+        <section class="category-preview">
+            <div class="category-title">
+                <h2>Chaussettes</h2>
+                <a href="categories/chaussettes.html" class="view-all">Voir tout →</a>
+            </div>
+            <div class="products-grid" id="chaussettes-products"></div>
+        </section>
+
+        <section class="category-preview">
+            <div class="category-title">
+                <h2>Accessoires</h2>
+                <a href="categories/accessoires.html" class="view-all">Voir tout →</a>
+            </div>
+            <div class="products-grid" id="accessoires-products"></div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <ul>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">Nos magasins</a></li>
+                    <li><a href="#">Recrutement</a></li>
+                    <li><a href="#">Développement durable</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Service Client</h3>
+                <ul>
+                    <li><a href="#">Contactez-nous</a></li>
+                    <li><a href="#">Livraison & Retours</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Guide des tailles</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations Légales</h3>
+                <ul>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📱</a>
+                    <a href="#" title="Instagram">📸</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Athletix. Tous droits réservés. <a href="admin/admin-login.html" class="admin-link">Admin</a></p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.overlay');
+        
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+        
+        menuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="js/products.js"></script>
+    <script type="module" src="js/slider.js"></script>
+    <script src="/js/transitions.js"></script>
+</body>
+</html>
