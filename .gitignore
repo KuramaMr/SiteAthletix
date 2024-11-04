@@ -1,6 +1,6 @@
 # Fichiers sensibles
 .env
-config.js
+admin/js/config.js
 
 # Fichiers système
 .DS_Store
