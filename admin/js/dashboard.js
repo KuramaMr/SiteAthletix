@@ -1,5 +1,5 @@
-import { auth, db } from './config.js';
-import { config } from './config.js';
+import { auth, db } from '/SiteAthletix/admin/js/config.js';
+import { config } from '/SiteAthletix/admin/js/config.js';
 import { collection, addDoc, getDocs, deleteDoc, doc, getDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 // Pas besoin d'importer Swal car il est déjà disponible globalement via le CDN
