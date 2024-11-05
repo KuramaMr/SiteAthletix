@@ -7,7 +7,7 @@ const errorMessage = document.getElementById('error-message');
 // Vérifier si l'utilisateur est déjà connecté
 auth.onAuthStateChanged((user) => {
     if (user) {
-        window.location.href = '/admin/dashboard.html';
+        window.location.href = 'dashboard.html';
     }
 });
 
@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
     
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        window.location.href = '/admin/dashboard.html';
+        window.location.href = 'dashboard.html';
     } catch (error) {
         errorMessage.textContent = 'Email ou mot de passe incorrect';
         console.error('Erreur de connexion:', error);
