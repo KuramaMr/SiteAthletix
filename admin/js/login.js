@@ -4,39 +4,40 @@ import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/1
 const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('error-message');
 
-console.log('Login script chargé'); // Debug
+console.log('1. Script de login chargé');
+console.log('2. Auth object:', auth);
 
 auth.onAuthStateChanged((user) => {
-    console.log('Auth state changed:', user); // Debug
+    console.log('3. Changement état auth:', user);
     if (user) {
-        console.log('Utilisateur connecté, redirection...'); // Debug
+        console.log('4. Utilisateur connecté, redirection...');
         window.location.href = '/admin/dashboard.html';
+    } else {
+        console.log('5. Aucun utilisateur connecté');
     }
 });
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log('Tentative de connexion...'); // Debug
+    console.log('6. Formulaire soumis');
     
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
+    console.log('7. Email utilisé:', email);
+    
     try {
-        console.log('Tentative de connexion avec:', email); // Debug
+        console.log('8. Tentative de connexion...');
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        console.log('Connexion réussie:', userCredential); // Debug
+        console.log('9. Connexion réussie:', userCredential);
         window.location.href = '/admin/dashboard.html';
     } catch (error) {
-        console.error('Code erreur:', error.code); // Debug détaillé
-        console.error('Message erreur:', error.message); // Debug détaillé
+        console.error('10. ERREUR - Code:', error.code);
+        console.error('11. ERREUR - Message:', error.message);
+        console.error('12. ERREUR - Détails complets:', error);
         
-        let messageErreur = 'Email ou mot de passe incorrect';
-        if (error.code === 'auth/invalid-credential') {
-            messageErreur = 'Identifiants invalides';
-        } else if (error.code === 'auth/too-many-requests') {
-            messageErreur = 'Trop de tentatives, réessayez plus tard';
-        }
-        
-        errorMessage.textContent = messageErreur;
+        errorMessage.textContent = 'Email ou mot de passe incorrect';
     }
 });
+
+console.log('13. Formulaire trouvé:', loginForm);
