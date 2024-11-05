@@ -1,6 +1,6 @@
 [build]
+  command = "cp admin/js/config.prod.js admin/js/config.js"
   publish = "."
-  command = "echo 'No build command'"
 
 [[redirects]]
   from = "/*"
