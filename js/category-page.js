@@ -1,4 +1,4 @@
-import { db } from '/admin/js/config.js';
+import { db } from '../admin/js/config.js';
 import { collection, getDocs, query, where, orderBy } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 // Obtenir la catégorie depuis l'URL

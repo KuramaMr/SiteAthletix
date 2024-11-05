@@ -22,8 +22,6 @@ loginForm.addEventListener('submit', async (e) => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    console.log('Email:', email); // Debug (ne pas laisser en production)
-    
     try {
         console.log('Appel à signInWithEmailAndPassword...'); // Debug
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -32,6 +30,5 @@ loginForm.addEventListener('submit', async (e) => {
     } catch (error) {
         console.error('Erreur détaillée:', error); // Debug détaillé
         errorMessage.textContent = 'Email ou mot de passe incorrect';
-        console.error('Erreur de connexion:', error);
     }
 });
