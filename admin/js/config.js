@@ -3,16 +3,16 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
 const firebaseConfig = {
-    apiKey: "VOTRE_VRAIE_CLE_API",
-    authDomain: "VOTRE_VRAI_DOMAINE",
-    projectId: "VOTRE_VRAI_PROJET",
-    storageBucket: "VOTRE_VRAI_BUCKET",
-    messagingSenderId: "VOTRE_VRAI_SENDER",
-    appId: "VOTRE_VRAI_APP_ID"
+    apiKey: process.env.FIREBASE_API_KEY || "VOTRE_CLE_API",
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN || "VOTRE_DOMAINE",
+    projectId: process.env.FIREBASE_PROJECT_ID || "VOTRE_PROJET",
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET || "VOTRE_BUCKET",
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || "VOTRE_SENDER",
+    appId: process.env.FIREBASE_APP_ID || "VOTRE_APP_ID"
 };
 
 export const config = {
-    imgbbApiKey: "VOTRE_VRAIE_CLE_IMGBB"
+    imgbbApiKey: process.env.IMGBB_API_KEY || "VOTRE_CLE_IMGBB"
 };
 
 const app = initializeApp(firebaseConfig);
