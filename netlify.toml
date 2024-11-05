@@ -1,5 +1,5 @@
 [build]
-  command = "cp admin/js/config.prod.js admin/js/config.js"
+  command = "sed -i 's/FIREBASE_API_KEY/'\"$FIREBASE_API_KEY\"'/g; s/FIREBASE_AUTH_DOMAIN/'\"$FIREBASE_AUTH_DOMAIN\"'/g; s/FIREBASE_PROJECT_ID/'\"$FIREBASE_PROJECT_ID\"'/g; s/FIREBASE_STORAGE_BUCKET/'\"$FIREBASE_STORAGE_BUCKET\"'/g; s/FIREBASE_MESSAGING_SENDER_ID/'\"$FIREBASE_MESSAGING_SENDER_ID\"'/g; s/FIREBASE_APP_ID/'\"$FIREBASE_APP_ID\"'/g; s/IMGBB_API_KEY/'\"$IMGBB_API_KEY\"'/g' admin/js/config.js"
   publish = "."
 
 [[redirects]]
