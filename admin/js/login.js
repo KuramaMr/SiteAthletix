@@ -7,8 +7,7 @@ const errorMessage = document.getElementById('error-message');
 // Vérifier si l'utilisateur est déjà connecté
 auth.onAuthStateChanged((user) => {
     if (user) {
-        // Redirection forcée avec remplacement de l'historique
-        window.location.replace('dashboard.html');
+        window.location.href = '/admin/dashboard.html';
     }
 });
 
@@ -20,8 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
     
     try {
         await signInWithEmailAndPassword(auth, email, password);
-        // Redirection forcée avec remplacement de l'historique
-        window.location.replace('dashboard.html');
+        window.location.href = '/admin/dashboard.html';
     } catch (error) {
         errorMessage.textContent = 'Email ou mot de passe incorrect';
         console.error('Erreur de connexion:', error);

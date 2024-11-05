@@ -32,7 +32,7 @@ async function uploadImage(imageFile) {
 // Vérification de l'authentification
 auth.onAuthStateChanged((user) => {
     if (!user) {
-        window.location.href = 'admin-login.html';
+        window.location.href = '/admin/admin-login.html';
     }
 });
 
