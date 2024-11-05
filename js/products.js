@@ -1,7 +1,11 @@
 import { db } from '../admin/js/config.js';
 import { collection, getDocs, query, where, limit } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
+console.log('1. Products.js chargé');
+console.log('2. DB object:', db);
+
 async function loadProductsByCategory(category, containerId, maxItems = 4) {
+    console.log('3. Tentative de chargement pour:', category);
     try {
         const productsRef = collection(db, 'products');
         const q = query(
@@ -10,7 +14,10 @@ async function loadProductsByCategory(category, containerId, maxItems = 4) {
             limit(maxItems)
         );
         
+        console.log('4. Requête préparée');
         const querySnapshot = await getDocs(q);
+        console.log('5. Données reçues:', querySnapshot.size);
+        
         const container = document.getElementById(containerId);
         
         if (container) {
@@ -18,12 +25,13 @@ async function loadProductsByCategory(category, containerId, maxItems = 4) {
             
             querySnapshot.forEach((doc) => {
                 const product = { ...doc.data(), id: doc.id };
+                console.log('6. Produit trouvé:', product);
                 const productCard = createProductCard(product);
                 container.appendChild(productCard);
             });
         }
     } catch (error) {
-        console.error(`Erreur lors du chargement des produits ${category}:`, error);
+        console.error('ERREUR chargement produits:', error);
     }
 }
 

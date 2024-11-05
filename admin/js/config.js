@@ -1,22 +1,24 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
-import { getStorage } from "firebase/storage";
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
 
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID
+    apiKey: "AIzaSyADu1FtAILOLXEtwHOKHv1ZGrg131dIqho",
+    authDomain: "siteatletix-9eb85.firebaseapp.com",
+    projectId: "siteatletix-9eb85",
+    storageBucket: "siteatletix-9eb85.firebasestorage.app",
+    messagingSenderId: "457700397446",
+    appId: "1:457700397446:web:0400f54c009dbb715adc07"
 };
 
 export const config = {
-    imgbbApiKey: process.env.IMGBB_API_KEY
+    imgbbApiKey: "8683f1bc1a36bcbb4862475d39e1bad4"
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+
+console.log('Firebase initialisé');
